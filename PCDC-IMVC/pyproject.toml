@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pcdc-imvc"
+version = "0.1.0"
+description = "PCDC-IMVC: Prototype-Driven Cooperative Completion for Incomplete Multi-View Clustering"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name = "PCDC-IMVC Contributors" }
+]
+dependencies = [
+  "numpy>=1.21",
+  "scipy>=1.8",
+  "scikit-learn>=1.0",
+  "torch>=1.12",
+  "munkres>=1.1.4",
+  "h5py>=3.8",
+  "matplotlib>=3.5"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "ruff>=0.5"
+]
+
+[project.scripts]
+pcdc-train = "pcdc_imvc.cli.train:main"
+pcdc-train-two = "pcdc_imvc.cli.train_two_view:main"
+pcdc-train-multi = "pcdc_imvc.cli.train_multi_view:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
