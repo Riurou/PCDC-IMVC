@@ -38,8 +38,6 @@ def _cfg_two_caltech101_20():
             batch_size=256,
             epoch=500,
             alpha=10,
-            beta=10,
-            gamma=5,
             lambda2=8,
             lambda1=0.1,
             lambda3=0.4,
@@ -69,7 +67,6 @@ def _cfg_two_mnist_usps():
     return dict(
         seed=42,
         view=2,
-        augmentation=dict(enable=False, feature_dropout=0.0, gaussian_std=0.0),
         Autoencoder=dict(
             arch1=[784, 1024, 1024, 1024, 40],
             arch2=[784, 1024, 1024, 1024, 40],
